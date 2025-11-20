@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Booking-form</title>
+    <link rel="stylesheet" href="CSS/styles2.css">
+
+</head>
+
+<body>
+
+    <main>
+        <div id="summary"></div>
+    </main>
+
+    <div class="form-container">
+        <h2>Boka Studentpaket</h2>
+        <form id="bookingForm">
+            <label for="email">E-post:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Telefonnummer:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="class">Klass:</label>
+            <input type="text" id="class" name="class" required>
+
+            <label for="school">Skola:</label>
+            <input type="text" id="school" name="school" required>
+
+            <button type="submit">Boka</button>
+        </form>
+
+        <p id="invoiceMessage" style="display: none; text-align: center; margin-top: 1rem;"></p>
+
+        <div class="popup" id="popupMsg">
+            Tack för din bokning! Vi kontaktar er snart med fakturan.
+        </div>
+    </div>
+
+    <div class="back-arrow">
+        <a href="products.html" title="Tillbaka till produktsidan" style="font-size: 24px; text-decoration: none;">← Tillbaka</a>
+    </div>
+
+    <script>
+        const form = document.getElementById('bookingForm');
+        const popup = document.getElementById('popupMsg');
+        const invoiceMsg = document.getElementById('invoiceMessage');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+
+            popup.style.display = 'block';
+            invoiceMsg.textContent = `En faktura skickas till ${email}.`;
+            invoiceMsg.style.display = 'block';
+
+            setTimeout(() => {
+                popup.style.display = 'none';
+                invoiceMsg.style.display = 'none';
+                form.reset();
+                localStorage.removeItem("selections");
+                window.location.href = "homepage.html";
+            }, 5000);
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const summaryDiv = document.getElementById("summary");
+
+            function renderSelections() {
+                summaryDiv.innerHTML = "";
+                const selections = JSON.parse(localStorage.getItem("selections")) || [];
+
+                if (selections.length === 0) {
+                    summaryDiv.innerHTML = "<p>Inga produkter valda ännu.</p>";
+                    return;
+                }
+
+                let total = 0;
+
+                selections.forEach((item, index) => {
+                    const price = parseInt(item.price.replace(/\D/g, ""));
+                    total += price;
+
+                    const itemDiv = document.createElement("div");
+                    itemDiv.className = "val-item";
+                    itemDiv.innerHTML = `
+                        <div>
+                            <strong>${item.title}</strong><br>${item.price}
+                        </div>
+                        <button class="remove-btn" data-index="${index}">❌</button>
+                    `;
+                    summaryDiv.appendChild(itemDiv);
+                });
+
+                const totalDiv = document.createElement("div");
+                totalDiv.innerHTML = `<hr><strong>Totalt: ${total.toLocaleString()} kr</strong>`;
+                summaryDiv.appendChild(totalDiv);
+
+                // Lägg till lyssnare för borttagningsknapparna
+                document.querySelectorAll(".remove-btn").forEach(btn => {
+                    btn.addEventListener("click", function () {
+                        const index = parseInt(this.getAttribute("data-index"));
+                        selections.splice(index, 1);
+                        localStorage.setItem("selections", JSON.stringify(selections));
+                        renderSelections(); // Rita om listan
+                    });
+                });
+            }
+
+            renderSelections();
+        });
+    </script>
+
+</body>
+
+</html>

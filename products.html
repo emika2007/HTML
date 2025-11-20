@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>products</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/styles1.css">
+</head>
+
+<body>
+    <header>
+        <h1>StudentFix</h1>
+        <nav class="ikonmeny">
+            <div class="ikon">
+                <a href="homepage.html"><img src="img/home.svg" alt="House"></a>
+                <p>Hem</p>
+            </div>
+            <div class="ikon">
+                <a href="about.html"> <img src="img/info.svg" alt="Info"></a>
+                <p>Info</p>
+            </div>
+            <div class="ikon">
+                <a href="products.html"> <img src="img/products.svg" alt="Produkter"></a>
+                <p>Produkter</p>
+            </div>
+            <div class="ikon">
+                <a href="contact.html"> <img src="img/contact.svg" alt="Kontakt"></a>
+                <p>Kontakt</p>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Välj dina egna paketkombinationer</h2>
+        <div class="flex-container">
+            <div class="flex-item" onclick="openModal('flakModal')">🚚 Flak</div>
+            <div class="flex-item" onclick="openModal('lokalModal')">🏢 Lokal</div>
+            <div class="flex-item" onclick="openModal('ljudModal')">🔊 Ljudsystem</div>
+            <div class="flex-item" onclick="openModal('sprutolModal')">🍻 Sprutöl</div>
+            <div class="flex-item" onclick="openModal('dekorModal')">🎈 Dekoration</div>
+        </div>
+
+        <!-- Modal: Flak -->
+        <div id="flakModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('flakModal')">&times;</span>
+                <h2>Välj flaktyp</h2>
+                <div class="modal-options">
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/studentflak-20-personer-2.jpg" alt="Studentflak-20-per">
+                        </div>
+                        <h3>Studentflak 20 Personers</h3>
+                        <p>Ett kompakt flak perfekt för mindre klasser. Utrustat med säkerhetsräcken, plats för ett
+                            medelstort ljudsystem och takskydd. Passar upp till 20 personer.</p>
+                        <p>Pris: 6.000 kr</p>
+                    </div>
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/30-40_per.jpeg" alt="Studentflak-30-40-per">
+                        </div>
+                        <h3>Studentflak 30-40 Personers</h3>
+                        <p>Populärt val för mellanstora klasser. God plats för bra ljudanläggningar och stark
+                            konstruktion. Säkerhetscertifikat för upp till 40 personer.</p>
+                        <p>Pris: 12.000 kr</p>
+                    </div>
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/studentflak-70-80-personer.jpeg" alt="Studentflak-70-80-per">
+                        </div>
+                        <h3>Studentflak 70-80 Personers</h3>
+                        <p>Stort flak med förstärkt botten och klarar ett kraftigt ljudsystem. Extra utrymme för dans
+                            och dekorationer. Perfekt för större grupper.</p>
+                        <p>Pris: 18.000 kr</p>
+                    </div>
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/studentflak-140-personer.jpg" alt="Studentflak-140-per">
+                        </div>
+                        <h3>Studentflak 140 Personers</h3>
+                        <p>Vårt största och mest robusta flak! Kan utrustas med professionellt ljud, scenyta och maxade
+                            säkerhetsfunktioner. Rekommenderas för stora årskullar.</p>
+                        <p>Pris: 25.000 kr</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal: Lokal -->
+        <div id="lokalModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('lokalModal')">&times;</span>
+                <h3>Välj lokal</h3>
+                <div class="modal-options">
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/student_lokal_50_per.jpg" alt="Exempelbild">
+                        </div>
+                        <h3>Student lokal 50 Personers</h3>
+                        <p>Mysig lokal med enklare ljud- och ljus. Passar sittande middag eller mindre fester. ca 50 m².
+                        </p>
+                        <p>Pris: 6.000 kr</p>
+                    </div>
+                    <div class="modal-option">
+                        <h3>Student lokal 50 Personers med catring</h3>
+                        <p>Pris: 11.000 kr </p>
+                    </div>
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/student_lokal_70_per.jpg" alt="Exempelbild">
+                        </div>
+                        <h3>Student lokal 70 Personers</h3>
+                        <p>Välutrustad lokal med dansgolv och bardisk. Bra ventilation och akustik. ca 70 m².</p>
+                        <p>Pris: 9.000 kr</p>
+                    </div>
+                    <div class="modal-option">
+                        <h3>Student lokal 70 Personers med catring</h3>
+                        <p>Pris: 14.000 kr </p>
+                    </div>
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/student_lokal_90_per.jpg" alt="Exempelbild">
+                        </div>
+                        <h3>Student lokal 90 Personers</h3>
+                        <p>Modern lokal med scen, ljuseffekter och rymligt dansgolv. Perfekt för DJ och underhållning.
+                            ca 90 m².</p>
+                        <p>Pris: 14.000 kr</p>
+
+                    </div>
+                    <div class="modal-option">
+                        <h3>Student lokal 90 Personers med catring</h3>
+                        <p>Pris: 19.000 kr </p>
+                    </div>
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/student_lokal_100_per.jpg" alt="Exempelbild">
+                        </div>
+                        <h3>Student lokal 100 Personers</h3>
+                        <p>Mysig lada som får plats med ett större sällskap och ett exceptionellt ljudsystem. ca 90 m².
+                        </p>
+                        <p>Pris: 18.000 kr</p>
+                    </div>
+                    <div class="modal-option">
+                        <h3>Student lokal 100 Personers med catring</h3>
+                        <p>Pris: 23.000 kr </p>
+                    </div>
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/student_lokal_100_per2.jpg" alt="Exempelbild">
+                        </div>
+                        <h3>Student lokal 100 Personers</h3>
+                        <p>Fint lokal med skärgårdsutsikt men en fin stil. Ett bra val för lite större fester. ca 90 m².
+                        </p>
+                        <p>Pris: 20.000 kr</p>
+                    </div>
+                    <div class="modal-option">
+                        <h3>Student lokal 100 Personers med catring</h3>
+                        <p>Pris: 25.000 kr </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal: Ljudsystem -->
+        <div id="ljudModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('ljudModal')">&times;</span>
+                <h3>Välj ljudsystem</h3>
+                <div class="modal-options">
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/ljudsystem_s.jpg" alt="Exempelbild">
+                        </div>
+                        <h3>Litet Ljudsystem</h3>
+                        <p>En högtalare i mindre klass & mikrofon. Behöver ingen installation.</p>
+                        <p>Pris: 1.000 kr</p>
+                    </div>
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/ljudsystem_m.jpg" alt="Exempelbild">
+                        </div>
+                        <h3>Medelstort Ljudsystem</h3>
+                        <p>Två högtalare & två baslådor & högtalarstativ & mixerbord & sladdar. Enkel installation.</p>
+                        <p>Pris: 2.500 kr</p>
+                    </div>
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/ljudsystem_m2.jpg" alt="Exempelbild">
+                        </div>
+                        <h3>Medelstort Ljudsystem</h3>
+                        <p>Två trådlösa högtalare med bluetooth uppkoppling & högtalarstativ. Enkel installation.</p>
+                        <p>Pris: 2.500 kr</p>
+                    </div>
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/ljudsystem_l.jpg" alt="Exempelbild">
+                        </div>
+                        <h3>Stort Ljudsystem</h3>
+                        <p>Två högtalare & en baslåda & högtalarstativ & sladdar & elagregat . Enkel installation.</p>
+                        <p>Pris: 5.000 kr</p>
+                    </div>
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/ljudsystem_xl.jpg" alt="Exempelbild">
+                        </div>
+                        <h3>Extra Stort Ljudsystem</h3>
+                        <p>Två stora högtalare & två stora baslådor från JBL & sladdar & stor elagregat. Enkel
+                            installation.</p>
+                        <p>Pris: 8.000 kr</p>
+                    </div>
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/ljudsystem_xxl.jpg" alt="Exempelbild">
+                        </div>
+                        <h3>Extra Extra Stort Ljudsystem</h3>
+                        <p>Sex stora högtalare från JBL & stor elagregat & sladdar. Svårare installation.</p>
+                        <p>Pris: 20.000 kr</p>
+                    </div>
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/ljudsystem_xxl2.png" alt="Exempelbild">
+                        </div>
+                        <h3>Extra Extra Stort Ljudsystem</h3>
+                        <p>Fyra stora högtalare & fyra stora baslådor & sladdar & mixerbord. Svårare installation.</p>
+                        <p>Pris: 18.000 kr</p>
+                    </div>
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/ljudsystem_xxl3.webp" alt="Exempelbild">
+                        </div>
+                        <h3>Extra Extra Stort Ljudsystem</h3>
+                        <p>Fyra stora högtalare & två stora baslådor & sladdar & mixerbord. Svårare installation.</p>
+                        <p>Pris: 18.500 kr</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal: Sprutöl -->
+        <div id="sprutolModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('sprutolModal')">&times;</span>
+                <h3>Välj sprutöl</h3>
+                <div class="modal-options">
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/sprutol_1.jpg" alt="Exempelbild">
+                        </div>
+                        <h3>Sprut Öl 800 st</h3>
+                        <p>Perfekt för mindre klasser. Innehåller en blandning av burköl och färgad dryck.</p>
+                        <p>Pris: 3.000 kr</p>
+                    </div>
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/sprutol_2.jpg" alt="Exempelbild">
+                        </div>
+                        <h3>Sprut Öl 1200 st</h3>
+                        <p>Räcker till flera sprutrundor. Passar klasser på 30–40 personer.</p>
+                        <p>Pris: 5.000 kr</p>
+                    </div>
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/sprutol_3.jpg" alt="Exempelbild">
+                        </div>
+                        <h3>Sprut Öl 1800 st</h3>
+                        <p>För längre firande och större klasser. Blandad styrka på dryckerna.</p>
+                        <p>Pris: 7.500 kr</p>
+                    </div>
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/sprutol_4.jpg" alt="Exempelbild">
+                        </div>
+                        <h3>Sprut Öl 3600 st</h3>
+                        <p>Idealisk för riktigt stora flak eller kombinerade evenemang.</p>
+                        <p>Pris: 12.500 kr</p>
+                    </div>
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/sprutol_5.jpg" alt="Exempelbild">
+                        </div>
+                        <h3>Sprut Öl 4800 st</h3>
+                        <p>Täcker både flak och efterfest. Kan anpassas med alkoholfria alternativ.</p>
+                        <p>Pris: 15.000 kr</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal: Dekoration -->
+        <div id="dekorModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('dekorModal')">&times;</span>
+                <h3>Välj dekoration</h3>
+                <div class="modal-options">
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/dekoration_1.jpg" alt="Exempelbild">
+                        </div>
+                        <h3>Dekoration 1</h3>
+                        <p>Ballonger, serpentiner och konfetti i svenska flaggans färger.</p>
+                        <p>Pris: 300 kr</p>
+                    </div>
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/dekoration_2.jpg" alt="Exempelbild">
+                        </div>
+                        <h3>Dekoration 2</h3>
+                        <p>Ballonger i svenska flaggans färger.</p>
+                        <p>Pris: 350 kr</p>
+                    </div>
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/dekoration_3.webp" alt="Exempelbild">
+                        </div>
+                        <h3>Dekoration 3</h3>
+                        <p>Ballonger, serpentiner och konfetti i svenska flaggans färger.</p>
+                        <p>Pris: 250 kr</p>
+                    </div>
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/dekoration_4.jpg" alt="Exempelbild">
+                        </div>
+                        <h3>Dekoration 4</h3>
+                        <p>Massor av ballonger, flaggor, serpentiner och konfetti.</p>
+                        <p>Pris: 600 kr</p>
+                    </div>
+                    <div class="modal-option">
+                        <div class="bild-container">
+                            <img src="img/dekoration_5.jpg" alt="Exempelbild">
+                        </div>
+                        <h3>Dekoration 5</h3>
+                        <p>Allt man kan behöva, ballonger, serpentiner, konfetti och allt man kan tänka sig.</p>
+                        <p>Pris: 1.000 kr</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <a href="booking_form.html">Bekrefta bokning</a>
+        </div>
+
+
+    </main>
+    <footer>
+        <p>&copy; StudentFix. Alla rättigheter förbehållna.</p>
+    </footer>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = "block";
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            document.querySelectorAll(".modal").forEach(modal => {
+                if (event.target === modal) modal.style.display = "none";
+            });
+        };
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const options = document.querySelectorAll(".modal-option");
+
+            options.forEach(option => {
+                option.addEventListener("click", function () {
+                    const title = option.querySelector("h3")?.innerText || "Vald artikel";
+                    const price = option.querySelector("p:last-of-type")?.innerText || "Pris okänd";
+
+                    // Spara i localStorage
+                    let selections = JSON.parse(localStorage.getItem("selections")) || [];
+                    selections = selections.filter(s => !s.title.includes(title.split(" ")[0])); // Ersätt liknande kategori
+                    selections.push({ title, price });
+                    localStorage.setItem("selections", JSON.stringify(selections));
+
+                    // Visa popup
+                    const popup = document.getElementById("popup");
+                    popup.textContent = "Du valde: " + title;
+                    popup.classList.add("show");
+
+                    setTimeout(() => {
+                        popup.classList.remove("show");
+                    }, 5000);
+                });
+            });
+        });
+
+        document.querySelectorAll(".cart-button").forEach(button => {
+            button.addEventListener("click", function (event) {
+                event.stopPropagation(); // Förhindrar att klicket öppnar modal
+                alert("Produkten har lagts till i kundvagnen!");
+            });
+        });
+
+    </script>
+
+    <div id="popup" class="popup">Vald artikel</div>
+</body>
+
+</html>
